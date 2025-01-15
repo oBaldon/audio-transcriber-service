@@ -53,7 +53,7 @@ whisper-api/
 ### **Passo a Passo**
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/whisper-api.git
+   git clone https://github.com/oBaldon/whisper-api.git
    cd whisper-api
    ```
 
