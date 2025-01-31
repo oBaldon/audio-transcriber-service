@@ -1,153 +1,146 @@
-# **Whisper API**
-
-## **Descrição**
-A **Whisper API** é um serviço RESTful desenvolvido em Python, que utiliza o modelo **Whisper** da OpenAI para transcrição de áudio. Este projeto foi projetado para receber arquivos de áudio e retornar suas transcrições em texto de forma eficiente e escalável.
+### **Audio Transcriber Service**
+Este é um microserviço para **transcrição automática de arquivos de áudio** utilizando o modelo de transcrição **Whisper**. Ele oferece uma API RESTful baseada em **FastAPI** para receber arquivos de áudio, processá-los e retornar o texto transcrito. O serviço suporta múltiplos formatos de áudio e é otimizado para operação em ambientes de produção com Docker.
 
 ---
 
-## **Características**
-- Transcrição de áudio precisa utilizando o modelo **Whisper**.
-- Suporte a múltiplos formatos de áudio.
-- API modular e escalável com boas práticas de design.
-- Verificação de integridade da API por meio de endpoints de health-check.
-- Pronto para execução em ambientes de desenvolvimento e produção.
+### **Funcionalidades**
+- Recepção de arquivos de áudio via endpoint HTTP.
+- Transcrição automática utilizando o modelo Whisper.
+- Suporte a formatos de áudio populares:
+  - `wav`
+  - `mp3`
+  - `flac`
+  - `ogg`
+  - `webm`
+  - `m4a`
+- Configuração simplificada via Docker e `.env`.
 
 ---
 
-## **Estrutura do Projeto**
-```plaintext
-whisper-api/
-│
-├── app/
-│   ├── __init__.py          # Inicializa a aplicação Flask
-│   ├── main.py              # Ponto de entrada principal da API
-│   ├── routes/              # Rotas organizadas modularmente
-│   │   ├── transcribe.py    # Rota para transcrição de áudio
-│   │   └── health.py        # Rota para health-check
-│   ├── services/            # Lógica de negócios da API
-│   │   └── transcriber.py   # Integração com o modelo Whisper
-│   ├── utils/               # Utilitários para manipulação de áudio
-│   │   └── audio_utils.py   # Funções para conversão de formatos de áudio
-│   └── models/              # (Opcional) Modelos de dados
-│
-├── tests/                   # Testes automatizados
-│   ├── test_transcribe.py   # Testes para a rota de transcrição
-│   └── test_health.py       # Testes para a rota de health-check
-│
-├── .env                     # Variáveis de ambiente (não versionado)
-├── .gitignore               # Arquivos/pastas ignorados pelo Git
-├── requirements.txt         # Dependências do projeto
-└── README.md                # Documentação do projeto
+### **Requisitos**
+- **Python 3.12+**
+- **ffmpeg** instalado no servidor
+- Dependências definidas em `requirements.txt`
+
+---
+
+### **Instalação e Execução**
+
+#### **1. Clonar o repositório**
+```sh
+git clone https://github.com/oBaldon/audio-transcriber-service.git
+cd audio-transcriber-service
+```
+
+#### **2. Criar e ativar o ambiente virtual**
+```sh
+python3 -m venv venv
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate     # Windows
+```
+
+#### **3. Instalar as dependências**
+```sh
+pip install -r requirements.txt
+```
+
+#### **4. Iniciar o microserviço**
+```sh
+uvicorn app:app --host 0.0.0.0 --port 8000
 ```
 
 ---
 
-## **Instalação**
+### **Uso da API**
 
-### **Pré-requisitos**
-- Python 3.8 ou superior
-- Pip (gerenciador de pacotes)
-- Ambiente virtual Python (recomendado)
-- Modelo Whisper da OpenAI
-
-### **Passo a Passo**
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/oBaldon/whisper-api.git
-   cd whisper-api
-   ```
-
-2. Crie e ative um ambiente virtual:
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # Linux/MacOS
-   venv\Scripts\activate     # Windows
-   ```
-
-3. Instale as dependências:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. Inicie o servidor:
-   ```bash
-   python -m app.main
-   ```
-
----
-
-## **Uso**
-
-### **Endpoints**
-#### **1. Health Check**
-- **URL:** `/health/`
-- **Método:** `GET`
-- **Descrição:** Verifica se a API está funcionando corretamente.
-- **Exemplo de Resposta:**
-  ```json
-  {
-    "status": "API is running"
-  }
-  ```
-
-#### **2. Transcrição de Áudio**
-- **URL:** `/transcribe/`
+#### **Endpoint:** `/transcribe/`
 - **Método:** `POST`
-- **Descrição:** Recebe um arquivo de áudio e retorna sua transcrição.
-- **Parâmetros:**
-  - `audio` (form-data): Arquivo de áudio a ser transcrito.
-- **Exemplo de Resposta:**
-  ```json
-  {
-    "transcription": "Texto transcrito do áudio"
-  }
-  ```
+- **Descrição:** Recebe um arquivo de áudio e retorna a transcrição em formato JSON.
+  
+**Exemplo de requisição usando `curl`:**
+```sh
+curl -X POST "http://localhost:8000/transcribe/" \
+     -F "file=@/path/to/sample_audio.wav"
+```
 
-### **Exemplo de Requisição com cURL**
-```bash
-curl -X POST -F "audio=@/caminho/para/audio.wav" http://127.0.0.1:5000/transcribe/
+**Exemplo de resposta:**
+```json
+{
+    "transcription": "Este é o texto transcrito do áudio."
+}
 ```
 
 ---
 
-## **Testes**
-Para rodar os testes automatizados:
-1. Instale o `pytest`:
-   ```bash
-   pip install pytest
-   ```
-2. Execute os testes:
-   ```bash
-   pytest tests/
-   ```
+### **Testes**
 
----
+Os testes automatizados foram implementados utilizando **pytest**. Eles cobrem os principais fluxos do microserviço, incluindo:
+- Upload de arquivos de áudio válidos.
+- Manipulação de erros, como caminhos de arquivos inválidos.
 
-## **Produção**
-### **Usando Gunicorn**
-Recomenda-se usar o Gunicorn para produção:
-```bash
-gunicorn -w 4 -b 0.0.0.0:5000 app.main:app
+Para executar os testes, utilize o comando:
+```sh
+pytest
 ```
 
-### **Usando Docker**
-1. Construa a imagem:
-   ```bash
-   docker build -t whisper-api .
-   ```
-2. Execute o container:
-   ```bash
-   docker run -p 5000:5000 whisper-api
-   ```
+---
+
+### **Execução com Docker**
+
+#### **1. Construir a imagem Docker**
+```sh
+docker build -t audio-transcriber-service .
+```
+
+#### **2. Executar o contêiner**
+```sh
+docker run -p 8000:8000 audio-transcriber-service
+```
+
+Agora o serviço estará disponível em `http://localhost:8000`.
 
 ---
 
-## **Contribuição**
-Contribuições são bem-vindas! Sinta-se à vontade para abrir **issues** ou enviar **pull requests**.
+### **Configuração**
+
+Você pode utilizar um arquivo `.env` para definir variáveis de configuração como:
+- `APP_PORT`: Porta de execução.
+- `DEBUG`: Modo de depuração.
+- `MAX_AUDIO_DURATION`: Limite máximo de duração do áudio em segundos.
+- `UPLOAD_FOLDER`: Diretório para arquivos temporários.
 
 ---
 
-## **Licença**
+### **Estrutura do Projeto**
 
+```
+audio-transcriber-service/
+│
+├── app.py                # Código principal da aplicação FastAPI
+├── services/             # Lógica de serviços (ex.: whisper_service.py)
+├── utils/                # Utilitários para manipulação de arquivos
+├── tests/                # Arquivos de teste (pytest)
+├── Dockerfile            # Definição da imagem Docker
+├── requirements.txt      # Dependências do projeto
+└── README.md             # Documentação do projeto
+```
 
 ---
+
+### **Tecnologias Utilizadas**
+- **Python 3.12**
+- **FastAPI** (API REST)
+- **Whisper** (Modelo de transcrição)
+- **ffmpeg** (Manipulação de áudio)
+- **Docker** (Conteinerização)
+- **pytest** (Testes automatizados)
+
+---
+
+### **Autor**
+Desenvolvido por...  
+Contribuições e sugestões são bem-vindas! ✨
+
+Se precisar de mais informações ou encontrar problemas, sinta-se à vontade para abrir uma **issue** no repositório.
+
+--- 
