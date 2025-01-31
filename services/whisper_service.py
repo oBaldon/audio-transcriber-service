@@ -1,4 +1,5 @@
 import whisper
+from config.config import WHISPER_MODEL
 
 def transcribe_audio(audio_file_path: str) -> str:
     """
@@ -10,8 +11,8 @@ def transcribe_audio(audio_file_path: str) -> str:
     Retorna:
     - str: Transcrição do áudio.
     """
-    # Carregar o modelo Whisper
-    model = whisper.load_model("large")
+    # Carregar o modelo Whisper a partir da configuração
+    model = whisper.load_model(WHISPER_MODEL)
 
     # Transcrever o áudio
     result = model.transcribe(audio_file_path)

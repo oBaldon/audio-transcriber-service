@@ -104,10 +104,23 @@ Agora o serviço estará disponível em `http://localhost:8000`.
 ### **Configuração**
 
 Você pode utilizar um arquivo `.env` para definir variáveis de configuração como:
-- `APP_PORT`: Porta de execução.
-- `DEBUG`: Modo de depuração.
-- `MAX_AUDIO_DURATION`: Limite máximo de duração do áudio em segundos.
-- `UPLOAD_FOLDER`: Diretório para arquivos temporários.
+
+- **`APP_PORT`**: Porta em que o aplicativo será executado (padrão: `8000`).
+- **`DEBUG`**: Define o modo de depuração (`True` ou `False`).
+- **`WHISPER_MODEL`**: Modelo a ser utilizado pelo Whisper (`tiny`, `base`, `small`, `medium`, `large`). O padrão é **`large`**.
+- **`MAX_AUDIO_DURATION`**: Limite máximo de duração do áudio em segundos (opcional).
+- **`UPLOAD_FOLDER`**: Diretório temporário para upload de arquivos (opcional).
+
+---
+
+**Exemplo de `.env`:**
+```env
+APP_PORT=8000
+DEBUG=True
+WHISPER_MODEL=medium
+MAX_AUDIO_DURATION=300
+UPLOAD_FOLDER=/tmp/uploads
+```
 
 ---
 

@@ -4,6 +4,9 @@ import os
 # Carregar o arquivo .env
 load_dotenv()
 
+# Definir o modelo padrão ou carregar do .env
+WHISPER_MODEL = os.getenv("WHISPER_MODEL", "large")
+
 class Config:
     """
     Configurações gerais do microserviço, carregadas a partir do .env.
@@ -15,3 +18,5 @@ class Config:
 
 # Instância das configurações
 global_config = Config()
+
+
