@@ -1,6 +1,6 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from services.whisper_service import transcribe_audio
-from config import config
+from config.settings import Config
 import os
 import uvicorn
 from utils.file_handler import save_upload_file
@@ -48,4 +48,4 @@ async def transcribe(file: UploadFile = File(...)):
 
 # Ponto de entrada principal
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=config.APP_PORT, debug=config.DEBUG)
+    uvicorn.run(app, host="0.0.0.0", port=Config.APP_PORT, debug=Config.DEBUG)
