@@ -11,6 +11,7 @@ app = FastAPI(title="Audio Transcriber Service", version="1.0.0")
 # Lista de tipos MIME suportados
 SUPPORTED_AUDIO_TYPES = [
     "audio/wav",
+    "audio/wave",
     "audio/x-wav",
     "audio/mpeg",     # MP3
     "audio/x-flac",   # FLAC
