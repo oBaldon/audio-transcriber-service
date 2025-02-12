@@ -60,7 +60,7 @@ uvicorn app:app --host 0.0.0.0 --port 8000
 **Exemplo de requisição usando `curl`:**
 ```sh
 curl -X POST "http://localhost:8000/transcribe/" \
-     -F "file=@/path/to/sample_audio.wav"
+     -F "file=@/path/to/sample_audio.wav;type=audio/wav"
 ```
 
 **Exemplo de resposta:**
