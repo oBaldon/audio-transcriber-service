@@ -49,4 +49,4 @@ async def transcribe(file: UploadFile = File(...)):
 
 # Ponto de entrada principal
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=Config.APP_PORT, debug=Config.DEBUG)
+    uvicorn.run(app, host="0.0.0.0", port=Config.APP_PORT, reload=Config.DEBUG)
