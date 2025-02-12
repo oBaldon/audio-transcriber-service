@@ -2,12 +2,18 @@ version: "3.8"
 
 services:
   app:
+    container_name: audio-transcriber-service
     build: .
-    container_name: audiotranscriber
-    command: uvicorn app:app --host 0.0.0.0 --port 8000
     ports:
       - "8000:8000"
     environment:
       - PYTHONUNBUFFERED=1
     volumes:
       - .:/app
+    command: ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
