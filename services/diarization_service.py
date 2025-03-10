@@ -1,5 +1,5 @@
 import whisperx
-import torch
+from utils.device_utils import get_device
 from config.settings import Config
 
 def assign_speakers_to_segments(segments: list, diarization_segments: list) -> list:
@@ -18,7 +18,7 @@ def apply_diarization(segments: list, audio_file_path: str) -> list:
     """
     Aplica diarização e retorna os segmentos com speaker atribuído.
     """
-    device = "cuda" if torch.cuda.is_available() else "cpu"
+    device = get_device()
     diarize_model = whisperx.DiarizationPipeline(use_auth_token=Config.HUGGINGFACE_TOKEN, device=device)
     diarize_df = diarize_model(audio_file_path)
     diarize_segments = diarize_df.to_dict("records")

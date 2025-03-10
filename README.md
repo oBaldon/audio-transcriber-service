@@ -175,9 +175,3 @@ audio-transcriber-service/
 Desenvolvido por [@oBaldon](https://github.com/oBaldon) e [@TiagoComeron](https://github.com/TiagoComeron)
 
 Contribuições e sugestões são bem-vindas!
-
----
-
-## 📎 Links úteis
-
-- 📍 [ROADMAP Técnico do Projeto](./ROADMAP.md)

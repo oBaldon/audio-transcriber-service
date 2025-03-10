@@ -11,6 +11,6 @@ class Config:
     MAX_AUDIO_DURATION = int(os.getenv("MAX_AUDIO_DURATION", 300))
     UPLOAD_FOLDER = os.getenv("UPLOAD_FOLDER", "temp/")
     HUGGINGFACE_TOKEN = os.getenv("HUGGINGFACE_TOKEN", None)
-    COMPUTE_TYPE = os.getenv("COMPUTE_TYPE", "auto")
+    DEVICE_TYPE = os.getenv("DEVICE_TYPE", "auto")  # valores possíveis: 'cuda', 'cpu', 'auto'
 
 global_config = Config()
