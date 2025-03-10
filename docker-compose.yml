@@ -1,19 +1,19 @@
-version: "3.8"
+version: '3.8'
 
 services:
-  app:
-    container_name: audio-transcriber-service
+  whisper-transcriber:
+    container_name: whisper-transcriber
     build: .
     ports:
-      - "8000:8000"
-    environment:
-      - PYTHONUNBUFFERED=1
+      - "${APP_PORT:-8000}:8000"
     volumes:
       - .:/app
-    command: ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
-    restart: always
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "10m"
-        max-file: "3"
+    environment:
+      - APP_PORT=${APP_PORT}
+      - DEBUG=${DEBUG}
+      - WHISPER_MODEL=${WHISPER_MODEL}
+      - MAX_AUDIO_DURATION=${MAX_AUDIO_DURATION}
+      - UPLOAD_FOLDER=${UPLOAD_FOLDER}
+      - HUGGINGFACE_TOKEN=${HUGGINGFACE_TOKEN}
+      - COMPUTE_TYPE=${COMPUTE_TYPE}
+    restart: unless-stopped

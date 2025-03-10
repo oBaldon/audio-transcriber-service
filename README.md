@@ -1,159 +1,172 @@
-### **Audio Transcriber Service**
-Este é um microserviço para **transcrição automática de arquivos de áudio** utilizando o modelo de transcrição **Whisper**. Ele oferece uma API RESTful baseada em **FastAPI** para receber arquivos de áudio, processá-los e retornar o texto transcrito. O serviço suporta múltiplos formatos de áudio e é otimizado para operação em ambientes de produção com Docker.
+# 🎙️ Audio Transcriber Service
+
+Este é um microserviço para **transcrição automática de arquivos de áudio** utilizando o modelo de transcrição **Whisper** da OpenAI. Ele oferece uma API RESTful baseada em **FastAPI** para receber arquivos de áudio, processá-los e retornar o texto transcrito. O serviço suporta múltiplos formatos de áudio e é otimizado para operação em ambientes de produção com Docker.
 
 ---
 
-### **Funcionalidades**
+## 🚀 Funcionalidades
+
 - Recepção de arquivos de áudio via endpoint HTTP.
-- Transcrição automática utilizando o modelo Whisper.
+- Transcrição automática utilizando o modelo **Whisper (original)**.
+- Alinhamento palavra por palavra com **WhisperX**.
+- Diarização de locutores (quem falou o quê) com **WhisperX + PyAnnote**.
 - Suporte a formatos de áudio populares:
-  - `wav`
-  - `mp3`
-  - `flac`
-  - `ogg`
-  - `webm`
-  - `m4a`
+  - `wav`, `mp3`, `flac`, `ogg`, `webm`, `m4a`
 - Configuração simplificada via Docker e `.env`.
 
 ---
 
-### **Requisitos**
+## ✅ Requisitos
+
 - **Python 3.12+**
 - **ffmpeg** instalado no servidor
 - Dependências definidas em `requirements.txt`
 
 ---
 
-### **Instalação e Execução**
+## ⚙️ Instalação e Execução
 
-#### **1. Clonar o repositório**
-```sh
+### 1. Clonar o repositório
+```bash
 git clone https://github.com/oBaldon/audio-transcriber-service.git
 cd audio-transcriber-service
 ```
 
-#### **2. Criar e ativar o ambiente virtual**
-```sh
+### 2. Criar e ativar o ambiente virtual
+```bash
 python3 -m venv venv
 source venv/bin/activate  # Linux/macOS
 venv\Scripts\activate     # Windows
 ```
 
-#### **3. Instalar as dependências**
-```sh
+### 3. Instalar as dependências
+```bash
 pip install -r requirements.txt
 ```
 
-#### **4. Iniciar o microserviço**
-```sh
+### 4. Iniciar o microserviço
+```bash
 uvicorn app:app --host 0.0.0.0 --port 8000
 ```
 
 ---
 
-### **Uso da API**
+## 📡 Uso da API
 
-#### **Endpoint:** `/transcribe/`
+### **Endpoint:** `/transcribe/`
 - **Método:** `POST`
-- **Descrição:** Recebe um arquivo de áudio e retorna a transcrição em formato JSON.
-  
-**Exemplo de requisição usando `curl`:**
-```sh
+- **Descrição:** Recebe um arquivo de áudio e retorna a transcrição completa com alinhamento e, se possível, diarização.
+
+### **Exemplo de requisição com `curl`:**
+```bash
 curl -X POST "http://localhost:8000/transcribe/" \
      -F "file=@/path/to/sample_audio.wav;type=audio/wav"
 ```
 
-**Exemplo de resposta:**
+### **Exemplo de resposta JSON:**
 ```json
 {
-    "transcription": "Este é o texto transcrito do áudio."
+  "language": "pt",
+  "text": "Transcrição completa do áudio aqui.",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 3.2,
+      "text": "Olá, tudo bem?",
+      "words": [
+        { "word": "Olá,", "start": 0.0, "end": 1.0 },
+        { "word": "tudo", "start": 1.1, "end": 2.0 },
+        { "word": "bem?", "start": 2.1, "end": 3.2 }
+      ],
+      "speaker": "SPEAKER_00"
+    }
+  ]
 }
 ```
 
 ---
 
-### **Testes**
+## 🧪 Testes
 
-Os testes automatizados foram implementados utilizando **pytest**. Eles cobrem os principais fluxos do microserviço, incluindo:
-- Upload de arquivos de áudio válidos.
-- Manipulação de erros, como caminhos de arquivos inválidos.
+Os testes automatizados foram implementados utilizando **pytest**, cobrindo os principais fluxos do microserviço, incluindo:
+- Upload de arquivos válidos.
+- Verificação de erros em uploads inválidos.
 
-Para executar os testes, utilize o comando:
-```sh
+### Para executar os testes:
+```bash
 pytest
 ```
 
 ---
 
-### **Execução com Docker**
+## 📦 Execução com Docker
 
-#### **1. Construir a imagem Docker**
-```sh
+### 1. Construir a imagem Docker
+```bash
 docker build -t audio-transcriber-service .
 ```
 
-#### **2. Executar o contêiner**
-```sh
+### 2. Executar o contêiner
+```bash
 docker run -p 8000:8000 audio-transcriber-service
 ```
 
-Agora o serviço estará disponível em `http://localhost:8000`.
+O serviço estará disponível em: [http://localhost:8000](http://localhost:8000)
 
----
-
-### **Configuração**
-
-Você pode utilizar um arquivo `.env` para definir variáveis de configuração como:
-
-- **`APP_PORT`**: Porta em que o aplicativo será executado (padrão: `8000`).
-- **`DEBUG`**: Define o modo de depuração (`True` ou `False`).
-- **`WHISPER_MODEL`**: Modelo a ser utilizado pelo Whisper (`tiny`, `base`, `small`, `medium`, `large`). O padrão é **`large`**.
-- **`MAX_AUDIO_DURATION`**: Limite máximo de duração do áudio em segundos (opcional).
-- **`UPLOAD_FOLDER`**: Diretório temporário para upload de arquivos (opcional).
-
----
-
-**Exemplo de `.env`:**
-```env
-APP_PORT=8000
-DEBUG=True
-WHISPER_MODEL=medium
-MAX_AUDIO_DURATION=300
-UPLOAD_FOLDER=/tmp/uploads
+### 3. Ou execute com Docker Compose:
+```bash
+docker-compose up --build
 ```
 
 ---
 
-### **Estrutura do Projeto**
+## ⚙️ Configuração por `.env`
+
+Você pode definir as configurações no arquivo `.env`:
+
+```env
+APP_PORT=8000
+DEBUG=True
+WHISPER_MODEL=large
+MAX_AUDIO_DURATION=300
+UPLOAD_FOLDER=temp/
+HUGGINGFACE_TOKEN=seu_token_aqui
+COMPUTE_TYPE=auto
+```
+
+---
+
+## 📁 Estrutura do Projeto
 
 ```
 audio-transcriber-service/
 │
-├── app.py                # Código principal da aplicação FastAPI
-├── services/             # Lógica de serviços (ex.: whisper_service.py)
-├── utils/                # Utilitários para manipulação de arquivos
-├── tests/                # Arquivos de teste (pytest)
-├── Dockerfile            # Definição da imagem Docker
-├── requirements.txt      # Dependências do projeto
-└── README.md             # Documentação do projeto
+├── app.py                  # Aplicação FastAPI principal
+├── services/               # Serviços de transcrição, alinhamento, diarização
+├── utils/                  # Manipulação de arquivos (uploads, SRT, JSON)
+├── config/                 # Configurações de ambiente
+├── tests/                  # Testes automatizados com pytest
+├── Dockerfile              # Definição da imagem Docker
+├── docker-compose.yml      # Orquestração com Docker Compose
+├── requirements.txt        # Dependências Python
+└── README.md               # Documentação do projeto
 ```
 
 ---
 
-### **Tecnologias Utilizadas**
+## 🛠 Tecnologias Utilizadas
+
 - **Python 3.12**
-- **FastAPI** (API REST)
-- **Whisper** (Modelo de transcrição)
-- **ffmpeg** (Manipulação de áudio)
-- **Docker** (Conteinerização)
-- **pytest** (Testes automatizados)
+- **FastAPI**
+- **Whisper (OpenAI)**
+- **WhisperX (alinhamento e diarização)**
+- **ffmpeg**
+- **Docker & Docker Compose**
+- **pytest**
 
 ---
 
-### **Autor**
-Desenvolvido por...  
-Contribuições e sugestões são bem-vindas! ✨
+## 👤 Autor
 
-Se precisar de mais informações ou encontrar problemas, sinta-se à vontade para abrir uma **issue** no repositório.
-
---- 
+Desenvolvido por [@oBaldon](https://github.com/oBaldon)  
+Contribuições e sugestões são bem-vindas!

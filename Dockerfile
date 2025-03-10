@@ -1,24 +1,24 @@
-# Usar uma imagem oficial do Python 3.12 como base
-FROM python:3.12-slim
+# Base oficial com Python 3.10 (ou altere para 3.12 se preferir)
+FROM python:3.10-slim
 
-# Atualizar o sistema e instalar ffmpeg
-RUN apt-get update && apt-get install -y ffmpeg && apt-get clean
-
-# Definir o diretório de trabalho no contêiner
+# Setar diretório de trabalho
 WORKDIR /app
 
-# Copiar os arquivos do projeto para o contêiner
-COPY . /app
+# Copiar arquivos do projeto para dentro do container
+COPY . .
 
-# Instalar as dependências do projeto
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
+# Atualizar pip e instalar dependências do sistema
+RUN apt-get update && apt-get install -y \
+    ffmpeg \
+    git \
+    && rm -rf /var/lib/apt/lists/*
 
-# Expor a porta 8000 para o serviço
+# Instalar as dependências do Python
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt
+
+# Expor a porta padrão da aplicação
 EXPOSE 8000
 
-# Definir a variável de ambiente para produção
-ENV PYTHONUNBUFFERED=1
-
-# Comando para iniciar o aplicativo FastAPI usando Uvicorn
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+# Comando para iniciar o servidor FastAPI com Uvicorn
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
