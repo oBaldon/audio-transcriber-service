@@ -86,7 +86,7 @@ curl -X POST "http://localhost:8000/transcribe/" \
 
 ---
 
-## 🧪 Testes (IDISPONÍVEL)
+## 🧪 Testes (INDISPONÍVEL)
 
 Os testes automatizados foram implementados utilizando **pytest**, cobrindo os principais fluxos do microserviço, incluindo:
 - Upload de arquivos válidos.
