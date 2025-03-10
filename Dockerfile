@@ -1,24 +1,30 @@
-# Base oficial com Python 3.10 (ou altere para 3.12 se preferir)
+# Base oficial com Python 3.10 (ou 3.12 se preferir)
 FROM python:3.10-slim
 
-# Setar diretório de trabalho
+# Definir variável de ambiente para evitar prompt durante instalação
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# Diretório de trabalho
 WORKDIR /app
 
-# Copiar arquivos do projeto para dentro do container
-COPY . .
+# Copiar apenas o necessário primeiro (melhora cache de build)
+COPY requirements.txt .
 
-# Atualizar pip e instalar dependências do sistema
+# Instalar dependências do sistema + pip
 RUN apt-get update && apt-get install -y \
     ffmpeg \
     git \
-    && rm -rf /var/lib/apt/lists/*
+ && pip install --upgrade pip \
+ && pip install -r requirements.txt \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
 
-# Instalar as dependências do Python
-RUN pip install --upgrade pip && \
-    pip install -r requirements.txt
+# Copiar o restante dos arquivos do projeto
+COPY . .
 
 # Expor a porta padrão da aplicação
 EXPOSE 8000
 
-# Comando para iniciar o servidor FastAPI com Uvicorn
+# Comando padrão para iniciar o servidor FastAPI com Uvicorn
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]

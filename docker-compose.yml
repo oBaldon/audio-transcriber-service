@@ -5,9 +5,9 @@ services:
     container_name: whisper-transcriber
     build: .
     ports:
-      - "${APP_PORT:-8000}:8000"
+      - "${APP_PORT:-8000}:8000"  # Se APP_PORT não estiver definido, usa 8000
     volumes:
-      - .:/app
+      - .:/app                    # Monta diretório local dentro do contêiner (útil em dev)
     environment:
       - APP_PORT=${APP_PORT}
       - DEBUG=${DEBUG}
@@ -16,4 +16,4 @@ services:
       - UPLOAD_FOLDER=${UPLOAD_FOLDER}
       - HUGGINGFACE_TOKEN=${HUGGINGFACE_TOKEN}
       - DEVICE_TYPE=${DEVICE_TYPE}
-    restart: unless-stopped
+    restart: unless-stopped       # Reinicia o contêiner automaticamente se ele parar
