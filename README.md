@@ -122,6 +122,10 @@ docker-compose up --build
 
 ## ⚙️ Configuração por `.env`
 
+> ℹ️ **Importante:** Certifique-se de criar um arquivo `.env` na raiz do projeto antes de iniciar o microserviço.  
+> Esse arquivo deve conter as variáveis de ambiente necessárias para o funcionamento do serviço.  
+> Um exemplo completo de `.env` está disponível abaixo.
+
 Você pode definir as configurações no arquivo `.env`:
 
 ```env
