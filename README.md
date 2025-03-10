@@ -168,8 +168,10 @@ audio-transcriber-service/
 
 ## 👤 Autor
 
-Desenvolvido por [@oBaldon](https://github.com/oBaldon)
-                 [@TiagoComeron](https://github.com/TiagoComeron)
+Desenvolvido por 
+[@oBaldon](https://github.com/oBaldon)
+[@TiagoComeron](https://github.com/TiagoComeron)
+
 Contribuições e sugestões são bem-vindas!
 
 ---
