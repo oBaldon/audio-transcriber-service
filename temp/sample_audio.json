@@ -1,0 +1,264 @@
+{
+    "language": "pt",
+    "text": " Acho que eu tenho que dar B, não tem o que fazer. Eu já perdi esse jogo. Tá vendo? Toda vez que eu testo alguma coisa nova, não dá certo. Oi, Osmin. Daqui a pouco...",
+    "segments": [
+        {
+            "start": 0.0,
+            "end": 1.561,
+            "text": " Acho que eu tenho que dar B, não tem o que fazer.",
+            "words": [
+                {
+                    "word": "Acho",
+                    "start": 0.0,
+                    "end": 0.185,
+                    "score": 0.937
+                },
+                {
+                    "word": "que",
+                    "start": 0.205,
+                    "end": 0.267,
+                    "score": 0.894
+                },
+                {
+                    "word": "eu",
+                    "start": 0.287,
+                    "end": 0.349,
+                    "score": 0.242
+                },
+                {
+                    "word": "tenho",
+                    "start": 0.37,
+                    "end": 0.534,
+                    "score": 0.226
+                },
+                {
+                    "word": "que",
+                    "start": 0.554,
+                    "end": 0.616,
+                    "score": 0.323
+                },
+                {
+                    "word": "dar",
+                    "start": 0.637,
+                    "end": 0.698,
+                    "score": 0.0
+                },
+                {
+                    "word": "B,",
+                    "start": 0.719,
+                    "end": 0.842,
+                    "score": 0.848
+                },
+                {
+                    "word": "não",
+                    "start": 0.862,
+                    "end": 0.965,
+                    "score": 0.89
+                },
+                {
+                    "word": "tem",
+                    "start": 1.027,
+                    "end": 1.109,
+                    "score": 0.516
+                },
+                {
+                    "word": "o",
+                    "start": 1.129,
+                    "end": 1.15,
+                    "score": 0.887
+                },
+                {
+                    "word": "que",
+                    "start": 1.17,
+                    "end": 1.273,
+                    "score": 0.688
+                },
+                {
+                    "word": "fazer.",
+                    "start": 1.294,
+                    "end": 1.561,
+                    "score": 0.333
+                }
+            ],
+            "speaker": "SPEAKER_00"
+        },
+        {
+            "start": 1.82,
+            "end": 3.56,
+            "text": " Eu já perdi esse jogo.",
+            "words": [
+                {
+                    "word": "Eu",
+                    "start": 1.82,
+                    "end": 2.127,
+                    "score": 0.494
+                },
+                {
+                    "word": "já",
+                    "start": 2.209,
+                    "end": 2.291,
+                    "score": 1.0
+                },
+                {
+                    "word": "perdi",
+                    "start": 2.373,
+                    "end": 2.741,
+                    "score": 0.967
+                },
+                {
+                    "word": "esse",
+                    "start": 2.823,
+                    "end": 3.028,
+                    "score": 0.526
+                },
+                {
+                    "word": "jogo.",
+                    "start": 3.049,
+                    "end": 3.56,
+                    "score": 0.369
+                }
+            ],
+            "speaker": "SPEAKER_00"
+        },
+        {
+            "start": 4.46,
+            "end": 4.805,
+            "text": " Tá vendo?",
+            "words": [
+                {
+                    "word": "Tá",
+                    "start": 4.46,
+                    "end": 4.602,
+                    "score": 0.24
+                },
+                {
+                    "word": "vendo?",
+                    "start": 4.622,
+                    "end": 4.805,
+                    "score": 0.626
+                }
+            ],
+            "speaker": "SPEAKER_00"
+        },
+        {
+            "start": 4.845,
+            "end": 7.5,
+            "text": "Toda vez que eu testo alguma coisa nova, não dá certo.",
+            "words": [
+                {
+                    "word": "Toda",
+                    "start": 4.845,
+                    "end": 5.028,
+                    "score": 0.999
+                },
+                {
+                    "word": "vez",
+                    "start": 5.068,
+                    "end": 5.169,
+                    "score": 0.822
+                },
+                {
+                    "word": "que",
+                    "start": 5.19,
+                    "end": 5.25,
+                    "score": 0.758
+                },
+                {
+                    "word": "eu",
+                    "start": 5.271,
+                    "end": 5.311,
+                    "score": 0.988
+                },
+                {
+                    "word": "testo",
+                    "start": 5.352,
+                    "end": 5.554,
+                    "score": 0.558
+                },
+                {
+                    "word": "alguma",
+                    "start": 5.575,
+                    "end": 5.818,
+                    "score": 0.702
+                },
+                {
+                    "word": "coisa",
+                    "start": 5.859,
+                    "end": 6.061,
+                    "score": 0.884
+                },
+                {
+                    "word": "nova,",
+                    "start": 6.163,
+                    "end": 6.588,
+                    "score": 0.998
+                },
+                {
+                    "word": "não",
+                    "start": 6.629,
+                    "end": 6.73,
+                    "score": 0.444
+                },
+                {
+                    "word": "dá",
+                    "start": 6.791,
+                    "end": 7.196,
+                    "score": 0.877
+                },
+                {
+                    "word": "certo.",
+                    "start": 7.217,
+                    "end": 7.5,
+                    "score": 0.419
+                }
+            ],
+            "speaker": "SPEAKER_01"
+        },
+        {
+            "start": 13.02,
+            "end": 14.42,
+            "text": " Oi, Osmin.",
+            "words": [
+                {
+                    "word": "Oi,",
+                    "start": 13.02,
+                    "end": 13.731,
+                    "score": 0.896
+                },
+                {
+                    "word": "Osmin.",
+                    "start": 13.751,
+                    "end": 14.42,
+                    "score": 0.708
+                }
+            ],
+            "speaker": "SPEAKER_02"
+        },
+        {
+            "start": 14.504,
+            "end": 14.901,
+            "text": "Daqui a pouco...",
+            "words": [
+                {
+                    "word": "Daqui",
+                    "start": 14.504,
+                    "end": 14.671,
+                    "score": 0.08
+                },
+                {
+                    "word": "a",
+                    "start": 14.692,
+                    "end": 14.713,
+                    "score": 0.001
+                },
+                {
+                    "word": "pouco...",
+                    "start": 14.734,
+                    "end": 14.901,
+                    "score": 0.072
+                }
+            ],
+            "speaker": "SPEAKER_01"
+        }
+    ]
+}
