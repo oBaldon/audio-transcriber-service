@@ -43,8 +43,26 @@ venv\Scripts\activate     # Windows
 ```bash
 pip install -r requirements.txt
 ```
+### 4. Configuração do`.env`
 
-### 4. Iniciar o microserviço
+> ℹ️ **Importante:** Certifique-se de criar um arquivo `.env` na raiz do projeto antes de iniciar o microserviço.  
+> Esse arquivo deve conter as variáveis de ambiente necessárias para o funcionamento do serviço.  
+> Um exemplo completo de `.env` está disponível abaixo.
+
+Você pode definir as configurações no arquivo `.env`:
+
+```env
+APP_PORT=8000
+DEBUG=True
+WHISPER_MODEL=large
+MAX_AUDIO_DURATION=300
+UPLOAD_FOLDER=temp/
+HUGGINGFACE_TOKEN=seu_token_aqui
+DEVICE_TYPE=auto # valores possíveis: 'cuda', 'cpu', 'auto'
+```
+
+
+### 5. Iniciar o microserviço
 ```bash
 uvicorn app:app --host 0.0.0.0 --port 8000
 ```
@@ -116,26 +134,6 @@ O serviço estará disponível em: [http://localhost:8000](http://localhost:8000
 ### 3. Ou execute com Docker Compose:
 ```bash
 docker-compose up --build
-```
-
----
-
-## ⚙️ Configuração por `.env`
-
-> ℹ️ **Importante:** Certifique-se de criar um arquivo `.env` na raiz do projeto antes de iniciar o microserviço.  
-> Esse arquivo deve conter as variáveis de ambiente necessárias para o funcionamento do serviço.  
-> Um exemplo completo de `.env` está disponível abaixo.
-
-Você pode definir as configurações no arquivo `.env`:
-
-```env
-APP_PORT=8000
-DEBUG=True
-WHISPER_MODEL=large
-MAX_AUDIO_DURATION=300
-UPLOAD_FOLDER=temp/
-HUGGINGFACE_TOKEN=seu_token_aqui
-COMPUTE_TYPE=auto
 ```
 
 ---
