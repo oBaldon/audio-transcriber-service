@@ -173,3 +173,10 @@ audio-transcriber-service/
 Desenvolvido por [@oBaldon](https://github.com/oBaldon) e [@TiagoComeron](https://github.com/TiagoComeron)
 
 Contribuições e sugestões são bem-vindas!
+
+---
+
+### 📍 Roadmap Técnico
+
+Para conhecer os próximos passos planejados para a evolução do `audio-transcriber-service`, melhorias técnicas, testes e escalabilidade, consulte o [📍 Roadmap Técnico](./ROADMAP.md).  
+Esse documento detalha as fases de desenvolvimento e prioridades recomendadas para o projeto.
