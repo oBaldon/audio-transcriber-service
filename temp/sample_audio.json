@@ -1,264 +1,356 @@
 {
     "language": "pt",
-    "text": " Acho que eu tenho que dar B, não tem o que fazer. Eu já perdi esse jogo. Tá vendo? Toda vez que eu testo alguma coisa nova, não dá certo. Oi, Osmin. Daqui a pouco...",
+    "text": " Olá! Este é um áudio de teste gerado automaticamente para verificar o funcionamento da transcrição de voz. Com este exemplo, você poderá testar ferramentas como o Whisper e garantir que o reconhecimento de fala está funcionando corretamente. Este áudio possui cerca de 30 segundos e pode ser utilizado livremente para fins de demonstração.",
     "segments": [
         {
             "start": 0.0,
-            "end": 1.561,
-            "text": " Acho que eu tenho que dar B, não tem o que fazer.",
+            "end": 0.402,
+            "text": " Olá!",
             "words": [
                 {
-                    "word": "Acho",
+                    "word": "Olá!",
                     "start": 0.0,
-                    "end": 0.185,
+                    "end": 0.402,
+                    "score": 0.784
+                }
+            ],
+            "speaker": "SPEAKER_00"
+        },
+        {
+            "start": 0.864,
+            "end": 7.92,
+            "text": "Este é um áudio de teste gerado automaticamente para verificar o funcionamento da transcrição de voz.",
+            "words": [
+                {
+                    "word": "Este",
+                    "start": 0.864,
+                    "end": 1.106,
                     "score": 0.937
                 },
                 {
-                    "word": "que",
-                    "start": 0.205,
-                    "end": 0.267,
-                    "score": 0.894
+                    "word": "é",
+                    "start": 1.126,
+                    "end": 1.146,
+                    "score": 0.997
                 },
                 {
-                    "word": "eu",
-                    "start": 0.287,
-                    "end": 0.349,
-                    "score": 0.242
+                    "word": "um",
+                    "start": 1.367,
+                    "end": 1.528,
+                    "score": 0.306
                 },
                 {
-                    "word": "tenho",
-                    "start": 0.37,
-                    "end": 0.534,
-                    "score": 0.226
+                    "word": "áudio",
+                    "start": 1.548,
+                    "end": 1.769,
+                    "score": 0.862
                 },
                 {
-                    "word": "que",
-                    "start": 0.554,
-                    "end": 0.616,
-                    "score": 0.323
+                    "word": "de",
+                    "start": 1.809,
+                    "end": 1.93,
+                    "score": 0.281
                 },
                 {
-                    "word": "dar",
-                    "start": 0.637,
-                    "end": 0.698,
-                    "score": 0.0
+                    "word": "teste",
+                    "start": 1.95,
+                    "end": 2.272,
+                    "score": 0.824
                 },
                 {
-                    "word": "B,",
-                    "start": 0.719,
-                    "end": 0.842,
+                    "word": "gerado",
+                    "start": 2.332,
+                    "end": 2.774,
+                    "score": 0.786
+                },
+                {
+                    "word": "automaticamente",
+                    "start": 2.854,
+                    "end": 4.141,
+                    "score": 0.852
+                },
+                {
+                    "word": "para",
+                    "start": 4.161,
+                    "end": 4.402,
+                    "score": 0.683
+                },
+                {
+                    "word": "verificar",
+                    "start": 4.463,
+                    "end": 5.226,
                     "score": 0.848
                 },
                 {
-                    "word": "não",
-                    "start": 0.862,
-                    "end": 0.965,
-                    "score": 0.89
-                },
-                {
-                    "word": "tem",
-                    "start": 1.027,
-                    "end": 1.109,
-                    "score": 0.516
-                },
-                {
                     "word": "o",
-                    "start": 1.129,
-                    "end": 1.15,
-                    "score": 0.887
+                    "start": 5.247,
+                    "end": 5.267,
+                    "score": 0.656
                 },
                 {
-                    "word": "que",
-                    "start": 1.17,
-                    "end": 1.273,
-                    "score": 0.688
+                    "word": "funcionamento",
+                    "start": 5.367,
+                    "end": 6.352,
+                    "score": 0.812
                 },
                 {
-                    "word": "fazer.",
-                    "start": 1.294,
-                    "end": 1.561,
-                    "score": 0.333
-                }
-            ],
-            "speaker": "SPEAKER_00"
-        },
-        {
-            "start": 1.82,
-            "end": 3.56,
-            "text": " Eu já perdi esse jogo.",
-            "words": [
-                {
-                    "word": "Eu",
-                    "start": 1.82,
-                    "end": 2.127,
-                    "score": 0.494
+                    "word": "da",
+                    "start": 6.412,
+                    "end": 6.573,
+                    "score": 0.894
                 },
                 {
-                    "word": "já",
-                    "start": 2.209,
-                    "end": 2.291,
-                    "score": 1.0
+                    "word": "transcrição",
+                    "start": 6.593,
+                    "end": 7.397,
+                    "score": 0.889
                 },
                 {
-                    "word": "perdi",
-                    "start": 2.373,
-                    "end": 2.741,
-                    "score": 0.967
-                },
-                {
-                    "word": "esse",
-                    "start": 2.823,
-                    "end": 3.028,
-                    "score": 0.526
-                },
-                {
-                    "word": "jogo.",
-                    "start": 3.049,
-                    "end": 3.56,
-                    "score": 0.369
-                }
-            ],
-            "speaker": "SPEAKER_00"
-        },
-        {
-            "start": 4.46,
-            "end": 4.805,
-            "text": " Tá vendo?",
-            "words": [
-                {
-                    "word": "Tá",
-                    "start": 4.46,
-                    "end": 4.602,
-                    "score": 0.24
-                },
-                {
-                    "word": "vendo?",
-                    "start": 4.622,
-                    "end": 4.805,
-                    "score": 0.626
-                }
-            ],
-            "speaker": "SPEAKER_00"
-        },
-        {
-            "start": 4.845,
-            "end": 7.5,
-            "text": "Toda vez que eu testo alguma coisa nova, não dá certo.",
-            "words": [
-                {
-                    "word": "Toda",
-                    "start": 4.845,
-                    "end": 5.028,
-                    "score": 0.999
-                },
-                {
-                    "word": "vez",
-                    "start": 5.068,
-                    "end": 5.169,
-                    "score": 0.822
-                },
-                {
-                    "word": "que",
-                    "start": 5.19,
-                    "end": 5.25,
-                    "score": 0.758
-                },
-                {
-                    "word": "eu",
-                    "start": 5.271,
-                    "end": 5.311,
+                    "word": "de",
+                    "start": 7.458,
+                    "end": 7.558,
                     "score": 0.988
                 },
                 {
-                    "word": "testo",
-                    "start": 5.352,
-                    "end": 5.554,
-                    "score": 0.558
+                    "word": "voz.",
+                    "start": 7.639,
+                    "end": 7.92,
+                    "score": 0.412
+                }
+            ],
+            "speaker": "SPEAKER_00"
+        },
+        {
+            "start": 8.38,
+            "end": 17.56,
+            "text": " Com este exemplo, você poderá testar ferramentas como o Whisper e garantir que o reconhecimento de fala está funcionando corretamente.",
+            "words": [
+                {
+                    "word": "Com",
+                    "start": 8.38,
+                    "end": 8.561,
+                    "score": 0.478
                 },
                 {
-                    "word": "alguma",
-                    "start": 5.575,
-                    "end": 5.818,
-                    "score": 0.702
+                    "word": "este",
+                    "start": 8.661,
+                    "end": 8.862,
+                    "score": 0.893
                 },
                 {
-                    "word": "coisa",
-                    "start": 5.859,
-                    "end": 6.061,
-                    "score": 0.884
+                    "word": "exemplo,",
+                    "start": 8.902,
+                    "end": 9.565,
+                    "score": 0.885
                 },
                 {
-                    "word": "nova,",
-                    "start": 6.163,
-                    "end": 6.588,
-                    "score": 0.998
+                    "word": "você",
+                    "start": 9.846,
+                    "end": 10.148,
+                    "score": 0.972
                 },
                 {
-                    "word": "não",
-                    "start": 6.629,
-                    "end": 6.73,
-                    "score": 0.444
+                    "word": "poderá",
+                    "start": 10.208,
+                    "end": 10.69,
+                    "score": 0.575
                 },
                 {
-                    "word": "dá",
-                    "start": 6.791,
-                    "end": 7.196,
+                    "word": "testar",
+                    "start": 10.71,
+                    "end": 11.092,
+                    "score": 0.909
+                },
+                {
+                    "word": "ferramentas",
+                    "start": 11.172,
+                    "end": 11.956,
+                    "score": 0.774
+                },
+                {
+                    "word": "como",
+                    "start": 11.976,
+                    "end": 12.217,
                     "score": 0.877
                 },
                 {
-                    "word": "certo.",
-                    "start": 7.217,
-                    "end": 7.5,
-                    "score": 0.419
-                }
-            ],
-            "speaker": "SPEAKER_01"
-        },
-        {
-            "start": 13.02,
-            "end": 14.42,
-            "text": " Oi, Osmin.",
-            "words": [
-                {
-                    "word": "Oi,",
-                    "start": 13.02,
-                    "end": 13.731,
-                    "score": 0.896
+                    "word": "o",
+                    "start": 12.257,
+                    "end": 12.297,
+                    "score": 0.685
                 },
                 {
-                    "word": "Osmin.",
-                    "start": 13.751,
-                    "end": 14.42,
-                    "score": 0.708
-                }
-            ],
-            "speaker": "SPEAKER_02"
-        },
-        {
-            "start": 14.504,
-            "end": 14.901,
-            "text": "Daqui a pouco...",
-            "words": [
-                {
-                    "word": "Daqui",
-                    "start": 14.504,
-                    "end": 14.671,
-                    "score": 0.08
+                    "word": "Whisper",
+                    "start": 12.398,
+                    "end": 12.88,
+                    "score": 0.668
                 },
                 {
-                    "word": "a",
-                    "start": 14.692,
-                    "end": 14.713,
+                    "word": "e",
+                    "start": 12.9,
+                    "end": 12.92,
                     "score": 0.001
                 },
                 {
-                    "word": "pouco...",
-                    "start": 14.734,
-                    "end": 14.901,
-                    "score": 0.072
+                    "word": "garantir",
+                    "start": 12.94,
+                    "end": 13.543,
+                    "score": 0.85
+                },
+                {
+                    "word": "que",
+                    "start": 13.603,
+                    "end": 13.764,
+                    "score": 0.718
+                },
+                {
+                    "word": "o",
+                    "start": 13.784,
+                    "end": 13.804,
+                    "score": 0.489
+                },
+                {
+                    "word": "reconhecimento",
+                    "start": 13.864,
+                    "end": 14.909,
+                    "score": 0.831
+                },
+                {
+                    "word": "de",
+                    "start": 14.949,
+                    "end": 15.089,
+                    "score": 0.346
+                },
+                {
+                    "word": "fala",
+                    "start": 15.109,
+                    "end": 15.371,
+                    "score": 0.927
+                },
+                {
+                    "word": "está",
+                    "start": 15.431,
+                    "end": 15.712,
+                    "score": 0.796
+                },
+                {
+                    "word": "funcionando",
+                    "start": 15.792,
+                    "end": 16.616,
+                    "score": 0.644
+                },
+                {
+                    "word": "corretamente.",
+                    "start": 16.696,
+                    "end": 17.56,
+                    "score": 0.727
                 }
             ],
-            "speaker": "SPEAKER_01"
+            "speaker": "SPEAKER_00"
+        },
+        {
+            "start": 17.54,
+            "end": 24.56,
+            "text": " Este áudio possui cerca de 30 segundos e pode ser utilizado livremente para fins de demonstração.",
+            "words": [
+                {
+                    "word": "Este",
+                    "start": 17.54,
+                    "end": 18.264,
+                    "score": 0.867
+                },
+                {
+                    "word": "áudio",
+                    "start": 18.526,
+                    "end": 18.666,
+                    "score": 0.411
+                },
+                {
+                    "word": "possui",
+                    "start": 18.707,
+                    "end": 19.149,
+                    "score": 0.708
+                },
+                {
+                    "word": "cerca",
+                    "start": 19.169,
+                    "end": 19.592,
+                    "score": 0.72
+                },
+                {
+                    "word": "de",
+                    "start": 19.612,
+                    "end": 19.853,
+                    "score": 0.602
+                },
+                {
+                    "word": "30",
+                    "start": 19.994,
+                    "end": 20.115,
+                    "score": 0.7
+                },
+                {
+                    "word": "segundos",
+                    "start": 20.235,
+                    "end": 21.06,
+                    "score": 0.53
+                },
+                {
+                    "word": "e",
+                    "start": 21.08,
+                    "end": 21.1,
+                    "score": 0.002
+                },
+                {
+                    "word": "pode",
+                    "start": 21.12,
+                    "end": 21.281,
+                    "score": 0.232
+                },
+                {
+                    "word": "ser",
+                    "start": 21.301,
+                    "end": 21.462,
+                    "score": 0.857
+                },
+                {
+                    "word": "utilizado",
+                    "start": 21.523,
+                    "end": 22.207,
+                    "score": 0.887
+                },
+                {
+                    "word": "livremente",
+                    "start": 22.267,
+                    "end": 23.112,
+                    "score": 0.867
+                },
+                {
+                    "word": "para",
+                    "start": 23.132,
+                    "end": 23.393,
+                    "score": 0.77
+                },
+                {
+                    "word": "fins",
+                    "start": 23.414,
+                    "end": 23.756,
+                    "score": 0.904
+                },
+                {
+                    "word": "de",
+                    "start": 23.836,
+                    "end": 23.916,
+                    "score": 0.992
+                },
+                {
+                    "word": "demonstração.",
+                    "start": 23.977,
+                    "end": 24.56,
+                    "score": 0.606
+                }
+            ],
+            "speaker": "SPEAKER_00"
         }
     ]
 }

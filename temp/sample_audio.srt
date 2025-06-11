@@ -1,24 +1,16 @@
 1
-00:00:00,000 --> 00:00:01,561
- Acho que eu tenho que dar B, não tem o que fazer.
+00:00:00,000 --> 00:00:00,402
+ Olá!
 
 2
-00:00:01,820 --> 00:00:03,560
- Eu já perdi esse jogo.
+00:00:00,864 --> 00:00:07,919
+Este é um áudio de teste gerado automaticamente para verificar o funcionamento da transcrição de voz.
 
 3
-00:00:04,459 --> 00:00:04,804
- Tá vendo?
+00:00:08,380 --> 00:00:17,559
+ Com este exemplo, você poderá testar ferramentas como o Whisper e garantir que o reconhecimento de fala está funcionando corretamente.
 
 4
-00:00:04,844 --> 00:00:07,500
-Toda vez que eu testo alguma coisa nova, não dá certo.
-
-5
-00:00:13,019 --> 00:00:14,419
- Oi, Osmin.
-
-6
-00:00:14,503 --> 00:00:14,900
-Daqui a pouco...
+00:00:17,539 --> 00:00:24,559
+ Este áudio possui cerca de 30 segundos e pode ser utilizado livremente para fins de demonstração.
 
